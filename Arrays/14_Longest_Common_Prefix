@@ -19,7 +19,9 @@
 - If mismatch → return prefix so far
 
 ---
-
+## complexity
+Time: O(n * m) ,
+Space: O(1)
 ## ✅ Python Code
 
 ```python
