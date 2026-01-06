@@ -1,0 +1,38 @@
+
+---
+
+## 🟢 14. Longest Common Prefix  
+**Strings / Vertical Scanning**
+
+```md
+# 14. Longest Common Prefix
+
+## 🔍 Intuition
+- Compare characters column-wise (vertically)
+- Stop when mismatch occurs
+
+---
+
+## 🧠 Approach (Vertical Scanning)
+- Take first string as reference
+- Compare each character with same index in other strings
+- If mismatch → return prefix so far
+
+---
+
+## ✅ Python Code
+
+```python
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        if not strs:
+            return ""
+
+        shortest = min(strs, key=len)
+
+        for i in range(len(shortest)):
+            for string in strs:
+                if string[i] != shortest[i]:
+                    return shortest[:i]
+
+        return shortest     
